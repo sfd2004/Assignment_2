@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Recipe Plan</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='recipe_plan.css') }}">
+    </head>    
+<body>
+    <h1>Your Personalized Recipe Plan</h1>
+    <p>Preferences: {{ user_prefs }}</p>
+    
+    {% if recipes %}
+        <h2>Recipes:</h2>
+        <ul>
+            {% for recipe in recipes %}
+                <li><strong>{{ recipe.name }}</strong> - {{ recipe.ingredients }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No recipes added yet.</p>
+    {% endif %}
+    
+    <br>
+    <a href="{{ url_for('recipe_input') }}"><button>Add More Recipes</button></a>
+</body>
+</html>

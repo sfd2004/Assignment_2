@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Recipe Input</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='recipe_input.css') }}">
+    </head>    
+<body>
+    <h1>Add a Recipe</h1>
+    <form action="{{ url_for('recipe_input') }}" method="post">
+        <label>Recipe Name:</label>
+        <input type="text" name="recipe_name" required>
+        <br>
+        <label>Ingredients:</label>
+        <textarea name="ingredients" required></textarea>
+        <br>
+        <button type="submit">Add Recipe</button>
+    </form>
+    <br>
+    <a href="{{ url_for('recipe_plan') }}"><button>View Recipe Plan</button></a>
+</body>
+</html>
