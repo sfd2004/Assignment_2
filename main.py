@@ -15,7 +15,7 @@ recipe_categories = {
     "Sushi": {"dietary": "healthy", "cuisine": "Asian"}
 }
 
-@app.route('/', methods=['GET', 'POST']) #define home page, allows GET and POST requests
+@app.route('/', methods=['GET', 'POST']) # define home page, allows GET and POST requests
 def home():
     if request.method == 'POST':
         name = request.form.get('name', '').strip() #when user input name, take this name from the input field
