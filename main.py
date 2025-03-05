@@ -3,7 +3,8 @@ from flask import Flask, render_template, request, redirect, url_for, session
 app = Flask(__name__) # creates a flask app
 app.secret_key = 'supersecretkey'
 
-users, recipes = {}, [] # a dictionary to store users preferences, a list for recipes
+users = {} # dictionary for user preferences
+recipes = [] # a list for recipes
 
 # dictionary to classify recipes based on dietary restrictions and cuisine
 recipe_categories = {
