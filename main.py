@@ -71,8 +71,16 @@ def recipe_plan():
         category = recipe_categories.get(recipe_name, {"dietary": "none", "cuisine": "unknown"}) #if dietary and cuisine are not valid, then show NONE and UKNOWN
 
         #check if the recipe matches the user's preferences
-        cuisine_match = preferred_cuisine in category["cuisine"].lower() if preferred_cuisine else True
-        dietary_match = dietary_restriction in category["dietary"].lower() if dietary_restriction else True
+        cuisine_match = (
+            preferred_cuisine in category["cuisine"].lower() 
+            if preferred_cuisine 
+            else True
+        )
+        dietary_match = (
+            dietary_restriction in category["dietary"].lower() 
+            if dietary_restriction 
+            else True
+        )
 
         if cuisine_match and dietary_match:
             filtered_recipes.append(recipe) #if cuisine and dietary match, then add to recipe list
