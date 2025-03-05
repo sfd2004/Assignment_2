@@ -69,7 +69,7 @@ def recipe_plan():
     filtered_recipes = []
     for recipe in recipes:
         recipe_name = recipe["name"] #trying to find valid recipe name
-        category = recipe_categories.get(recipe_name, {"dietary": "none", "cuisine": "unknown"}) #if dietary and cuisine are not valid, then show NONE and UKNOWN
+        category = recipe_categories.get(recipe_name, {"dietary": "no", "cuisine": "no valid cuisine"}) #if dietary and cuisine are not valid, then show NONE and UKNOWN
 
         #check if the recipe matches the user's preferences
         cuisine_match = (
